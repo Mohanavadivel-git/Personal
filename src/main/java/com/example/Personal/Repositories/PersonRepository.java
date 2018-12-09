@@ -1,6 +1,6 @@
 package com.example.Personal.Repositories;
 
-import com.example.Personal.Controller.Person;
+import com.example.Personal.Model.Person;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
