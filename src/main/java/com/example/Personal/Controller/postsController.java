@@ -16,17 +16,7 @@ public class postsController {
     RestTemplate restTemplate= new RestTemplate();
 
     @RequestMapping(value = "/posts",method = RequestMethod.GET)
-    /*
-    public posts getpostdeatils() {
-        RestTemplate restTemplate = new RestTemplate();
-        //posts trial=new posts();
-        //trial.
-        posts quote = restTemplate.getForObject("https://jsonplaceholder.typicode.com/posts/1", posts.class);
-        return quote;
-    }*/
     public ResponseEntity<Object> getpostdeatils() {
         return new ResponseEntity<>(postsService.getposts(), HttpStatus.OK);
     }
-
-
 }
