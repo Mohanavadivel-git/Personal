@@ -1,10 +1,8 @@
 package com.example.Personal.Controller;
-
 import com.example.Personal.Model.Blog;
 import com.example.Personal.Repositories.BlogRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Map;
 
@@ -34,10 +32,10 @@ public class BlogController {
     }
 
     @PostMapping("/blog")
-    public Blog create(@RequestBody Map<String, String> body){
-        String title = body.get("title");
-        String content = body.get("content");
-        return blogRespository.save(new Blog(title, content));
+    public Blog create(@RequestBody Blog body){
+        //String title = body.get("title");
+        //String content = body.get("content");
+        return blogRespository.save(body);
     }
 
     @PutMapping("/blog/{id}")
@@ -49,12 +47,12 @@ public class BlogController {
         blog.setContent(body.get("content"));
         return blogRespository.save(blog);
     }
-/*
+
     @DeleteMapping("blog/{id}")
     public boolean delete(@PathVariable String id){
         int blogId = Integer.parseInt(id);
-        blogRespository.delete(blogId);
+        blogRespository.deleteById(blogId);
         return true;
-    }*/
+    }
 }
 
