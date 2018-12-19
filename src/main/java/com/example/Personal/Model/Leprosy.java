@@ -25,30 +25,31 @@ public class Leprosy {
             strategy = "native"
     )
     public  int id;
-    public String State;
-    public String District;
-    public String Healthfacility;
-    public String Name;
-    public String Dob;
+    public String state;
+    public String district;
+    public String healthfacility;
+    public String name;
+    public String dob;
     public String Gender;
-    public String Phonenumber;
-    public String Address;
-    public String Leprosytype;
-    public String Identifiedtime;
-    public String Disabilitystatus;
-    public String Reactiontype;
-    public String Dose40mg;
-    public String Dose30mg;
-    public String Dose20mg;
-    public String Dose10mg;
-    public String Dose5mg;
-    public String Otherdrugs;
-    public boolean Treatmentcomplete;
-    public boolean Personstatus;
-    public String Remarks;
+    public String phonenumber;
+    public String address;
+    public String leprosytype;
+    public String identifiedtime;
+    public String disabilitystatus;
+    public String reactiontype;
+    public String dose40mg;
+    public String dose30mg;
+    public String dose20mg;
+    public String dose15mg;
+    public String dose10mg;
+    public String dose5mg;
+    public String otherdrugs;
+    public boolean treatmentcomplete;
+    public boolean personstatus;
+    public String remarks;
 
 
-
+/*
     public Leprosy(String State,String District,String Healthfacility,String Name,String Dob,String Gender,String Phonenumber,
                    String Address,String Leprosytype,String Identifiedtime,String Disabilitystatus,String Reactiontype,String Dose40mg,String Dose30mg,String Dose20mg,String Dose10mg,String Dose5mg,
                    String Otherdrugs,boolean Treatmentcomplete,boolean Personstatus,String Remarks) {
@@ -73,7 +74,7 @@ public class Leprosy {
         this.Treatmentcomplete=Treatmentcomplete;
         this.Personstatus=Personstatus;
         this.Remarks=Remarks;
-    }
+    }*/
 /*
     @Override
     public String toString() {

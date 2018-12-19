@@ -41,7 +41,7 @@ public class LeprosyController {
         int LeprosyId = Integer.parseInt(id);
         // getting blog
         Leprosy Leprosy = LeprosyRespository.findById(LeprosyId);
-        Leprosy.State=body.State;
+        Leprosy.state=body.state;
         return LeprosyRespository.save(body);
     }
 
