@@ -30,7 +30,7 @@ public class Leprosy {
     public String healthfacility;
     public String name;
     public String dob;
-    public String Gender;
+    public String gender;
     public String phonenumber;
     public String address;
     public String leprosytype;
