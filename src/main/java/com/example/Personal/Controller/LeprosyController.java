@@ -40,9 +40,31 @@ public class LeprosyController {
     public Leprosy update(@PathVariable String id, @RequestBody Leprosy body){
         int LeprosyId = Integer.parseInt(id);
         // getting blog
-        Leprosy Leprosy = LeprosyRespository.findById(LeprosyId);
-        Leprosy.state=body.state;
-        return LeprosyRespository.save(body);
+        Leprosy LeprosyUpdate = LeprosyRespository.findById(LeprosyId);
+        LeprosyUpdate.id=LeprosyId;
+        LeprosyUpdate.state=body.state;
+        LeprosyUpdate.district=body.district;
+        LeprosyUpdate.healthfacility=body.healthfacility;
+        LeprosyUpdate.name=body.name;
+        LeprosyUpdate.dob=body.dob;
+        LeprosyUpdate.gender=body.gender;
+        LeprosyUpdate.phonenumber=body.phonenumber;
+        LeprosyUpdate.address=body.address;
+        LeprosyUpdate.leprosytype=body.leprosytype;
+        LeprosyUpdate.identifiedtime= body.identifiedtime;
+        LeprosyUpdate.disabilitystatus=body.disabilitystatus;
+        LeprosyUpdate.reactiontype=body.reactiontype;
+        LeprosyUpdate.dose40mg=body.dose40mg;
+        LeprosyUpdate.dose30mg=body.dose30mg;
+        LeprosyUpdate.dose20mg=body.dose20mg;
+        LeprosyUpdate.dose15mg=body.dose15mg;
+        LeprosyUpdate.dose10mg=body.dose10mg;
+        LeprosyUpdate.dose5mg=body.dose5mg;
+        LeprosyUpdate.otherdrugs=body.otherdrugs;
+        LeprosyUpdate.treatmentcomplete=body.treatmentcomplete;
+        LeprosyUpdate.personstatus=body.personstatus;
+        LeprosyUpdate.remarks=body.remarks;
+        return LeprosyRespository.save(LeprosyUpdate);
     }
 
     @DeleteMapping("Leprosy/{id}")
