@@ -1,8 +1,10 @@
 package com.example.Personal.Controller;
+
 import com.example.Personal.Model.Leprosy;
 import com.example.Personal.Repositories.LeprosyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -14,6 +16,26 @@ public class LeprosyController {
     @GetMapping("/Leprosy")
     public List<Leprosy> index(){
         return LeprosyRespository.findAll();
+    }
+
+
+    @GetMapping("/FindByName/{Name}")
+    public List<Leprosy> FindByName(@PathVariable String Name){
+        return LeprosyRespository.findByname(Name);
+    }
+
+    @GetMapping("/FindDuplicate/{Name}/{Dob}")
+    public Boolean IsDuplicate(@PathVariable String Name,@PathVariable String Dob){
+        List<Leprosy> DuplicationNameList= LeprosyRespository.findByname(Name);
+        return DuplicationNameList
+                .stream()
+                .filter(e->e.getDob().equals(Dob))
+                .findFirst().isPresent();
+    }
+
+    @GetMapping("/FindByDob/{Dob}")
+    public List<Leprosy> FindByDob(@PathVariable String Dob){
+        return LeprosyRespository.findBydob(Dob);
     }
 
     @GetMapping("/Leprosy/{id}")
